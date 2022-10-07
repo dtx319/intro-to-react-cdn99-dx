@@ -48,7 +48,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/post">
-                        <Route path="uid">
+                        <Route path=":uid">
                             <Route path=":id" element={<PostSingle />} />
                         </Route>
                     </Route>
