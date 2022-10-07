@@ -37,23 +37,25 @@ function App() {
                     <div className="navbar-nav ml-auto">
                         {
                             (user.loggedIn) ?
-                            <button onClick={logout} className="btn btn-primary">Logout</button>
-                            :
-                            <button onClick={login} className="btn btn-primary">Login</button>
+                                <button onClick={logout} className="btn btn-primary">Logout</button>
+                                :
+                                <button onClick={login} className="btn btn-primary">Login</button>
                         }
                     </div>
                 </div>
             </nav>
             <div className="container">
-              <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/post">
-                      <Route path=":id" element={<PostSingle />} />
-                  </Route>
-                  <Route path="/students" element={<Students />} />
-                  <Route path="/counter" element={<CounterView />} />
-                  <Route path="/pokedex" element={<Pokedex />} />
-              </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/post">
+                        <Route path="uid">
+                            <Route path=":id" element={<PostSingle />} />
+                        </Route>
+                    </Route>
+                    <Route path="/students" element={<Students />} />
+                    <Route path="/counter" element={<CounterView />} />
+                    <Route path="/pokedex" element={<Pokedex />} />
+                </Routes>
             </div>
         </BrowserRouter>
     );
